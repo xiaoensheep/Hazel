@@ -6,4 +6,7 @@
 	#else
 		#define HAZEL_API __declspec(dllimport)
 	#endif
+
 #endif // HZ_PLATFORM_WINDOWS
+
+#define BIT(x) (1 << x)
