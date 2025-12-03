@@ -1,5 +1,4 @@
-#pragma once
-
+#pragma oce
 #include "hzpch.h"
 
 #include "Hazel/Core.h"
