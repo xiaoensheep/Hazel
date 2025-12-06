@@ -5,6 +5,8 @@
 #include "Hazel/Events/MouseEvent.h"
 #include "Hazel/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Hazel {
 
 	static bool s_GLFWInitialzed = false;
@@ -53,6 +55,10 @@ namespace Hazel {
 			GLFW 允许你创建多个窗口，每个窗口都有自己的 OpenGL 上下文
 			必须在调用任何 OpenGL 渲染函数前，先设置当前上下文*/
 		glfwMakeContextCurrent(m_Window);
+
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		HZ_CORE_ASSERT(status, "Failed to initialize Glad!");
+
 	/*	作用：把 m_Data 结构体的指针绑定到 GLFW 窗口对象上
 			好处：
 			GLFW 回调（比如键盘、鼠标事件）会传入 GLFWwindow* window
