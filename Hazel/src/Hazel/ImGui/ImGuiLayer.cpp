@@ -56,6 +56,7 @@ namespace Hazel {
 		io.KeyMap[ImGuiKey_Y] = GLFW_KEY_Y;
 		io.KeyMap[ImGuiKey_Z] = GLFW_KEY_Z;
 
+
 		ImGui_ImplOpenGL3_Init("#version 410");
 	}
 
@@ -104,13 +105,13 @@ namespace Hazel {
 	bool ImGuiLayer::OnMouseButtonPressedEvent(MouseButtonPressedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
-		io.MouseDown[e.GetMouseButon()] = true;
+		io.MouseDown[e.GetMouseButton()] = true;
 		return false;
 	}
 	bool ImGuiLayer::OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e)
 	{
 		ImGuiIO& io = ImGui::GetIO();
-		io.MouseDown[e.GetMouseButon()] = false;
+		io.MouseDown[e.GetMouseButton()] = false;
 		return false;
 	}
 	bool ImGuiLayer::OnMouseMovedEvent(MouseMovedEvent& e)
