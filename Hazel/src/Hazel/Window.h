@@ -38,6 +38,8 @@ namespace Hazel {
 		virtual void SetVSync(bool enabled) = 0;		//是否启用垂直同步（VSync）				
 		virtual bool IsVSync() const = 0;
 
+		virtual void* GetNativeWindow() const = 0;
+
 		static Window* Create(const WindowProps& props = WindowProps());
 
 	};
